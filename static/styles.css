@@ -268,3 +268,74 @@ footer {
     padding: 0 0.5rem;
   }
 }
+.ekthaal-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .ekthaal-hero-text {
+    flex: 1 1 350px;
+    min-width: 300px;
+  }
+  
+  .ekthaal-hindi-title {
+    margin-bottom: 1rem;
+  }
+  
+  .hindi-question {
+    display: block;
+    font-size: 2.2rem;
+    color: #ff4d4d;
+    font-weight: bold;
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .ekthaal-title {
+    display: block;
+    font-size: 2rem;
+    color: #ff9800;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ekthaal-desc {
+    color: #388e3c;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .ekthaal-hero-img {
+    flex: 1 1 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+  }
+  
+  .ekthaal-hero-img img {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    background: #fff8e1;
+  }
+  
+  @media (max-width: 800px) {
+    .ekthaal-hero {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .ekthaal-hero-img {
+      justify-content: flex-start;
+    }
+  }
