@@ -25,7 +25,7 @@ def signup(request):
     return render(request, 'signup.html')
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(requxest, 'contact.html')
 @csrf_protect
 def register(request):
     if request.method == 'POST':
@@ -295,3 +295,6 @@ def register_individual(request):
 
 def register_organization(request):
     return render(request, 'register_organization.html')
+
+def donate(request):
+    return render(request, 'donate.html')

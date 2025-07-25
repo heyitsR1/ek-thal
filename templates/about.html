@@ -1,23 +1,50 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}About{% endblock title %}
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'about.css' %}">
+{% endblock %}
 {% block content %}
 <div class="ekthaal-hero">
-    <div class="ekthaal-hero-text">
-      <div class="ekthaal-hindi-title">
-        <span class="hindi-question">के हो?</span>
-        <span class="ekthaal-title">EK THAAL</span>
-      </div>
-      <p class="ekthaal-desc">
-        Ek Thal is a community-driven food-sharing platform that connects those with surplus food to those who need it.<br>
-        Our mission is simple – reduce food waste and spread kindness, one plate at a time.<br>
-        What’s extra for you could mean a full meal for someone else.
-      </p>
+  <div class="ekthaal-hero-text">
+    <div class="ekthaal-hindi-title">
+      <span class="hindi-question">के हो?</span>
+      <span class="ekthaal-title">EK THAAL</span>
     </div>
-    <div class="ekthaal-hero-img">
-      <img src="{% static 'final.jpg' %}" alt="Hand giving food plate" />
+    <p class="ekthaal-desc">
+      Ek Thal is a community-driven food-sharing platform that connects those with surplus food to those who need it.<br>
+      Our mission is simple – reduce food waste and spread kindness, one plate at a time.<br>
+      What’s extra for you could mean a full meal for someone else.
+    </p>
+  </div>
+  <div class="ekthaal-hero-img">
+    <img src="{% static 'about_us.svg' %}" alt="Hand giving food plate" />
+  </div>
+</div>
+
+<!-- Stat Card Section -->
+<div class="ekthaal-stat-row">
+  <div class="stat-badge">
+    <span class="stat-icon">🎉</span>
+    <div class="stat-data">
+      <div class="stat-number">700+</div>
+      <div class="stat-text">individuals reached</div>
     </div>
   </div>
-{% endblock content %}
+  <div class="stat-badge">
+    <span class="stat-icon">🍽️</span>
+    <div class="stat-data">
+      <div class="stat-number">1,200+</div>
+      <div class="stat-text">plates shared</div>
+    </div>
+  </div>
+  <div class="stat-badge">
+    <span class="stat-icon">🤝</span>
+    <div class="stat-data">
+      <div class="stat-number">300+</div>
+      <div class="stat-text">volunteers engaged</div>
+    </div>
+  </div>
+</div>
 
+{% endblock content %}

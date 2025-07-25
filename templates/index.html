@@ -21,7 +21,7 @@
         <h1 class="heading">POST. SHARE. CARE.</h1>
         <p class="subheading">CONNECTING SURPLUS MEALS TO EMPTY PLATES ACROSS NEPAL.</p>
                 <div class="wave-buttons">
-            <a href="#" class="donate-btn">Donate Food</a>
+            <a href="{% url 'donate' %}" class="donate-btn">Donate Food</a>
             <a href="#" class="claim-btn">Claim Food</a>
         </div>
     </main>
@@ -62,7 +62,7 @@
     </div>
     <nav class="footer-nav">
       <a href="/">Home</a>
-      <a href="/post">Post Food</a>
+      <a href="{% url 'donate' %}">Post Food</a>
       <a href="/claim">Claim Food</a>
       <a href="/about">About Us</a>
     </nav>

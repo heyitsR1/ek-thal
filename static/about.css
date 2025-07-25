@@ -1,0 +1,213 @@
+/* Container Styling */
+.ekthaal-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    background-color: rgb(244, 180, 85);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    gap: 40px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+  }
+  
+  /* Text Section */
+  .ekthaal-hero-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .ekthaal-hindi-title {
+    margin-bottom: 10px;
+  }
+  
+  .hindi-question {
+    font-size: 2rem;
+    color: lch(100% 0.01 296.81);
+    font-weight: bold;
+    display: block;
+  }
+  
+  .ekthaal-title {
+    font-size: 3rem;
+    color: #27AE60;
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ekthaal-desc {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    background: linear-gradient(to right, #f7f8fa, #ffffff);
+    padding: 15px;
+    border-left: 4px solid #27AE60;
+    border-radius: 8px;
+  }
+  
+  /* Stats Section */
+  .ekthaal-stat {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #222;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .stat-text {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Image Styling */
+  .ekthaal-hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ekthaal-hero-img img {
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(4px 6px 6px rgba(0, 0, 0, 0.2));
+  }
+  
+  .ekthaal-hero-img img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .ekthaal-hero {
+      flex-direction: column;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  
+    .ekthaal-hero-text,
+    .ekthaal-hero-img {
+      max-width: 100%;
+    }
+  
+    .ekthaal-stat {
+      justify-content: center;
+    }
+  }
+  
+  /* Stat Card Design */
+  .ekthaal-stat-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 30px 20px;
+  }
+  
+  .stat-badge {
+    background: linear-gradient(to right, #27AE60, #1ABC9C);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-badge:hover {
+    transform: scale(1.05);
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+  }
+  
+  .stat-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .stat-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  /* Stat Cards Container */
+.ekthaal-stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual Stat Card */
+  .stat-badge {
+    background: linear-gradient(to right, #27AE60, #1ABC9C);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    min-width: 250px;
+    max-width: 300px;
+  }
+  
+  .stat-badge:hover {
+    transform: scale(1.05);
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+  }
+  
+  .stat-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .stat-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  /* Responsive Cards */
+  @media (max-width: 768px) {
+    .ekthaal-stat-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stat-badge {
+      width: 80%;
+    }
+  }

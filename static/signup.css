@@ -5,23 +5,29 @@ body {
 }
 
 .signup-container {
-  min-height: 100vh;
+  /* min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-}
+  background: #fff; */
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start; /* aligns card to the top instead of middle */
+    justify-content: center;
+    padding-top: 200px; /* gives some breathing room from the top */
+  }
 
 .signup-card {
   background: #4B9444;
   border-radius: 48px;
-  padding: 48px 32px 40px 32px;
+  padding: 40px 32px 40px 32px;
   box-shadow: 0 4px 32px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 380px;
   max-width: 90vw;
+  transform: translateY(-100px);
 }
 
 .signup-header {

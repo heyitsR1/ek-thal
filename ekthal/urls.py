@@ -29,4 +29,5 @@ urlpatterns = [
     path("logout/", views.logout_view, name="logout"),
     path("register_individual/", views.register_individual, name="register_individual"),
     path("register_organization/", views.register_organization, name="register_organization"),
+    path("donate/", views.donate, name="donate"),
 ]

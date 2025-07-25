@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'donate.css' %}">
+{% endblock %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'donate.css' %}">
+</head>
+<main class="donate-main">
+  <h2 class="donate-title">Donate Leftover Food</h2>
+  <form class="donate-form" method="post" enctype="multipart/form-data" autocomplete="on">
+    {% csrf_token %}
+    <label>
+      Food Item
+      <input type="text" name="food_item" required placeholder="e.g. Rice, Bread" autocomplete="off">
+    </label>
+    <label>
+      Quantity (kg)
+      <input type="number" name="quantity" min="0.1" step="0.1" required placeholder="e.g. 2.5">
+    </label>
+    <label>
+      Image
+      <input type="file" name="image" accept="image/*">
+    </label>
+    <label>
+      Contact Information
+      <input type="text" name="contact" required placeholder="Your Name / Phone / Email" autocomplete="name tel email">
+    </label>
+    <label>
+      Created at Date
+      <input type="date" name="created_at" required>
+    </label>
+    <label>
+      Stored at Date
+      <input type="date" name="stored_at" required>
+    </label>
+    <label class="checkbox-label">
+      <input type="checkbox" name="packaged"> Packaged
+    </label>
+    <label>
+      Special Instructions
+      <textarea name="instructions" rows="3" placeholder="Any special handling or notes..."></textarea>
+    </label>
+    <button type="submit" class="donate-btn">Donate</button>
+  </form>
+</main>
+{% endblock %}
