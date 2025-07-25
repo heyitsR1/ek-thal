@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Foods</title>
+    <link rel="stylesheet" href="{% static 'listings.css' %}">
+</head>
+<body>
+    <h1 class="title">AVAILABLE FOODS</h1>
+    <div class="container">
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=100&q=80" alt="Boiled Eggs" class="food-img">
+            <div class="food-info">
+                <div class="food-title">Boiled Eggs</div>
+                <div class="food-qty">Quantity: 20 kg</div>
+                <div class="food-location">Location: Jwalakhel, Lalitpur</div>
+                <div class="food-best-before">Best Before: 2025-07-28 18:00</div>
+                <div class="food-status-bar">
+                    <span class="status-dot fresh"></span>
+                    <span class="status-text">Fresh</span>
+                </div>
+                <button class="claim-btn">Claim Food</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
