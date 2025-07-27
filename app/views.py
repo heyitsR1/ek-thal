@@ -425,9 +425,28 @@ def register_organization(request):
     return render(request, 'register_organization.html')
 
 def user_profile_context(request):
-    if request.user.is_authenticated:
-        try:
-            return {'profile': Profile.objects.get(user=request.user)}
-        except Profile.DoesNotExist:
-            return {'profile': None}
-    return {'profile': None}
+    try:
+        if request.user.is_authenticated:
+            try:
+                return {'profile': Profile.objects.get(user=request.user)}
+            except Profile.DoesNotExist:
+                return {'profile': None}
+        return {'profile': None}
+    except Exception as e:
+        # Log the error but don't crash the app
+        print(f"Context processor error: {e}")
+        return {'profile': None}
+
+def handler500(request, exception=None):
+    """Custom 500 error handler for debugging"""
+    import traceback
+    import sys
+    
+    # Log the error details
+    exc_type, exc_value, exc_traceback = sys.exc_info()
+    error_details = ''.join(traceback.format_exception(exc_type, exc_value, exc_traceback))
+    
+    print(f"500 Error Details: {error_details}")
+    
+    # Return a simple error response
+    return render(request, '500.html', status=500)
