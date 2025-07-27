@@ -29,6 +29,28 @@ SECRET_KEY = os.environ.get('SECRET_KEY', "django-insecure-$+25wb&&5p$pw2rz7ufyk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
+# Add logging for debugging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
+
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1,localhost,.onrender.com').split(',')
 CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'https://127.0.0.1,https://localhost,https://*.onrender.com').split(',')
 
@@ -91,8 +113,13 @@ DATABASES = {
 # Use PostgreSQL in production (Render)
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if DATABASE_URL:
-    import dj_database_url
-    DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
+    try:
+        import dj_database_url
+        DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
+    except ImportError:
+        print("Warning: dj-database-url not installed. Using SQLite.")
+    except Exception as e:
+        print(f"Warning: Database configuration error: {e}. Using SQLite.")
 
 
 # Password validation
@@ -149,6 +176,28 @@ SITE_URL = 'https://ek-thal.onrender.com'
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Cloudinary Configuration for production
+CLOUDINARY = {
+    'cloud_name': os.environ.get('CLOUDINARY_CLOUD_NAME', ''),
+    'api_key': os.environ.get('CLOUDINARY_API_KEY', ''),
+    'api_secret': os.environ.get('CLOUDINARY_API_SECRET', ''),
+}
+
+# Use Cloudinary for media files in production
+if CLOUDINARY['cloud_name'] and CLOUDINARY['api_key'] and CLOUDINARY['api_secret']:
+    import cloudinary
+    import cloudinary.uploader
+    import cloudinary.api
+    
+    cloudinary.config(
+        cloud_name=CLOUDINARY['cloud_name'],
+        api_key=CLOUDINARY['api_key'],
+        api_secret=CLOUDINARY['api_secret']
+    )
+    
+    # Update media settings for Cloudinary
+    MEDIA_URL = f"https://res.cloudinary.com/{CLOUDINARY['cloud_name']}/image/upload/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
